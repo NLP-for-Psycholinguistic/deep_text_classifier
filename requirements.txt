@@ -1,0 +1,8 @@
+tensorflow==2.12.*
+tensorflow-text==2.12.*
+tensorflow-hub
+seaborn
+pandas
+lime
+pyyaml
+transformers
