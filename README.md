@@ -41,4 +41,4 @@ We provide an example corpus in the `data/corpus` folder based on french preside
 
 This project receive the support of the following organization: 
 
-![]()"data/images/logo_13nov_program.png)
+![]("data/images/logo_13nov_program.png)
