@@ -1,0 +1,94 @@
+results :
+  folder : "./results"
+  name : "preseident_2017"
+data :
+  nlp_folder : './data/corpus'
+  nlp_file_name : 'campagne_2017_spacy_nlp_data.pkl'
+  text_col : 'token'
+  target : "macron" #'PTSD_enc_robin' #sexe_enc
+  id_col : "id"
+
+  sequence : 
+    size : 128 #words
+    overlap : 50
+  
+  filter :
+    subgroup : ["critereA",["A1","A2"]]
+    drop_dysfluences : True
+    pos_filter :  [] # 'ADV', 'AUX', 'CCONJ','VERB', "PRON"[ 'ADV', 'AUX', 'CCONJ','VERB', "PRON"] #['ADJ', 'ADP', 'ADV', 'AUX', 'CCONJ', 'DET', 'INTJ', 'NOUN', 'NUM','PRON', 'PROPN', 'PUNCT', 'SCONJ', 'SYM', 'VERB', 'X'],
+    filter_hapax : False # false take the median, else enter a number 7000 for example
+    test_size : 0.2
+    seed : 0
+    max_number_word : "manual_cut"
+  
+    
+
+  split :
+    random_label : False
+    group : True
+    upsampling : False
+
+model :
+  vocab_size : 11500
+  kind  : "cnn" # distilbert_multi_cased, camembert, cnn, attention, bi_lstm, transformer, custom, lstm, distilbert_multi_cased
+  weight_decay : True
+  focal_loss : True
+  alpha_focal_loss : 0.7
+  gamma_focal_loss : 2
+  pos_label : 1
+  cnn :
+    learning_rate : 0.0001
+    embedding_size : 128
+    spatial_dropout : 0.3
+    nb_filters : 32
+    kernel_size : 9
+    dropout: 0.3
+    pooling : "average" #flatten, average
+  lstm :
+    learning_rate : 0.001
+    embedding_size : 64
+    spatial_dropout : 0.3
+    units_1 : 16
+    units_2 : 8
+    dropout : 0.3
+  attention :
+    learning_rate : 0.001
+    embedding_size : 64
+    lstm_units_1 : 16
+    lstm_units_2 : 16
+    attention_units : 10
+    dropout : 0.05
+  transformer :
+    learning_rate : 0.001
+    embedding_size : 64
+    nb_heads : 2
+    ff_dim : 32
+    dropout_1 : 0.1
+    dense_units : 20
+    dropout_2 : 0.1
+  distilbert_multi_cased :
+    learning_rate : 0.00002
+    dropout : 0.4
+  labse : 
+    learning_rate : 0.00002
+    dropout : 0.4
+  camembert :
+    learning_rate : 0.00001
+    trainable_layers : -1
+    dense_units : 32
+    dropout : 0.2
+  custom :
+    learning_rate : 0.001
+
+
+  training :
+    epochs : 15
+    batch_size : 512
+    class_weight : "balanced"
+
+interpreter :
+  num_samples : 4
+  lime :
+    num_features : 50
+
+

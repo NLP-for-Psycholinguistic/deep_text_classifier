@@ -1,0 +1,22 @@
+ensemble
+## Data description
+Il y a 130 documents, de longeur moyenne 5851.192307692308
+Il y a  760655 token
+Il y a 26113 mots uniques
+Il y a 10977  hapax (qui n'apparaisse qu'une fois)
+LABELS DESCRIPTION: 
+macronmacron
+0    98
+1    32
+Name: count, dtype: int64
+filter
+## Data description
+Il y a 130 documents, de longeur moyenne 5851.192307692308
+Il y a  760655 token
+Il y a 26113 mots uniques
+Il y a 10977  hapax (qui n'apparaisse qu'une fois)
+LABELS DESCRIPTION: 
+macronmacron
+0    98
+1    32
+Name: count, dtype: int64
