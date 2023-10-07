@@ -20,7 +20,7 @@ This repository is particularly adapted to classify small dataset of long text.
 
  We have used it to classify PTSD from text. The process is the following:
 
-![](data/images/PTSD_text_classification.png)
+![figure 1: example of sequence building](data/images/PTSD_text_classification.png)
 
 
 We provide an example corpus in the `data/corpus` folder based on french presidential campaign speeches. You can inspect and create classifier using this online tool: http://hyperbase.unice.fr/hyperbase/ 
@@ -39,6 +39,7 @@ We provide an example corpus in the `data/corpus` folder based on french preside
 
 ## Supports
 
-This project receive the support of the following organization: 
+This project receive the support from the following organization: 
 
-![]("data/images/logo_13nov_program.png)
+![figure 2: logo](data/images/logo_13nov_program.png)
+
